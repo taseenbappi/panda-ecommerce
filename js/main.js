@@ -8,17 +8,31 @@ const shoesCard = document.getElementsByClassName('shoesCard');
 for (const card of shoesCard) {
     card.style.borderRadius = "30px"
 }
+//card remove function
+const butn = document.getElementsByClassName('deleteBtn')
+for (const button of butn) {
+    button.addEventListener('click', function () {
+        document.getElementById('col').remove();
+    })
+}
 
-const clicked = document.getElementById('clicked');
-clicked.addEventListener('click', function () {
-    console.log('clicked');
-});
-clicked.addEventListener('click', function () {
-    const shoesCard = document.getElementsByClassName('shoesCard');
-    shoesCard.style.display = 'none';
-    // clicked.style.display = 'none';
-});
+////email validation
+const visitEmail = document.getElementById('visitEmail');
+visitEmail.addEventListener('keyup', function (event) {
+    if (event.target.value == 'email') {
+        document.getElementById('submitBtn').removeAttribute('disabled');
+    }
+    else {
+        document.getElementById('submitBtn').setAttribute('disabled', true);
+    }
+})
 
-
-
+/////image changer
+function imgCng() {
+    console.log('hover');
+    document.getElementById('catImg').src = 'shoe-2.png';
+}
+function imgUnCng() {
+    document.getElementById('catImg').src = 'shoe-1.png';
+}
 
